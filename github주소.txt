@@ -1,1 +1,5 @@
+1. rpa 소스 주소
 https://github.com/DongJoonLeeDJ/AI_501_4/tree/main/pmh/nadocoding/rpa_basic
+
+2. pyqt5 책 주소
+https://wikidocs.net/35482
