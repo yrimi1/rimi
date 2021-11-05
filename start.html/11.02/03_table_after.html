@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 속성 후</title>
+
+    <style>
+        div {
+            border: solid 1px black;
+        }
+
+        div {
+            display: table;
+        }
+
+        div>div {
+            display: table-cell;
+        }
+
+        /* 이거 안주면 세로로 나옴 */
+    </style>
+
+
+</head>
+
+
+<body>
+    <div>
+        <div>아무말1</div>
+        <div>아무말2</div>
+        <div>아무말3</div>
+    </div>
+    <div>
+        <div>아무말1-1</div>
+        <div>아무말2-1</div>
+        <div>아무말3-1</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>grid 스타트와 앤드</title>
+    <!-- 그리드에서 col 은 행 가로 , row는 세로  -->
+    <style>
+        #container{display: grid; gap: 10px; 
+                    grid-template-columns: 200px 400px 200px;
+                    grid-template-rows: 200px 200px;}
+        #container>div{border: 1px solid black; background-color: coral;}
+        #cell_one{grid-row-start: 1;
+                  grid-row-end:2;
+                  grid-column-start: 1 ;
+                  grid-column-end:3;}
+    </style>
+</head>
+
+
+<body>
+    <div id = 'container'>
+        <div id="cell one"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <!-- <div> 이걸 주석처리해야하는 이유</div> -->
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- 그리드를 적용하고 갭으로 10을 줌..  -->
+<!-- 가로 (col)를 3열로 가정하고 숫자 3개를 줌  -->
+<!-- 높이(row)를 2로 가정하고 숫자 2개를 줌  -->
+<!-- 마지막 줄 주석처리한 이유는..  그리드에서 저렇게 병합한다고 해서 실제 병합되는것이 아니라 그저 스타트앤드 값만 크게 준것 뿐..  -->
+<!-- 화면 구현으로응 5개의셀이 보이지만 실질적으로 셀은 6개가 존재하고있음.. 그래서 짜투리 하나 나옴 -->

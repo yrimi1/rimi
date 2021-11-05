@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>grid 웹 반응형으로 만들어 봅시다. </title>
+    <!-- 그리드에서 col 은 행 가로 , row는 세로  -->
+    <style>
+        #container{display: grid; gap: 10px; 
+                    grid-template-columns: 1fr 2fr 1fr;
+                    grid-template-rows: 1fr 2fr;}
+        #container>div{border: 1px solid black; background-color: coral;}
+    </style>
+</head>
+
+
+<body>
+    <div id = 'container'>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ratione quaerat consequatur, cum perspiciatis architecto accusantium autem veritatis laborum! Minima.</div>
+    </div>
+</body>
+
+</html>
+
+
+
+<!-- fr 비율// grid-template 값을 px값을 주면 고정. fr값은 변동 -->

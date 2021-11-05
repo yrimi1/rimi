@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직관적인 그리드 배치</title>
+    <style>
+        #grid{display: grid;
+            grid-template: 1fr 200px 1fr/500px 1fr;
+            grid-template-areas: 
+            'Header Header'
+            'Aside Section'
+            'Footer Footer';
+            gap: 10px;
+        }    
+
+        #grid>div{border: 1px solid black;}
+            /* 따옴표 안됨 */
+        #Header{grid-area:Header;}
+        #Aside{grid-area:Aside;}
+        #Section{grid-area:Section;}
+        #Footer{grid-area:Footer;}
+
+    </style>
+</head>
+
+
+<body>
+    <div id="grid">
+        <div id="Header"><h1>Header</h1></div>
+        <div id="Aside"><h1>Aside</h1></div>
+        <div id="Section"><h1>Section</h1></div>
+        <div id="Footer"><h1>Footer</h1></div>
+    </div>
+</body>
+</html>
+sprite

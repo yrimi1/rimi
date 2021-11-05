@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>grid</title>
+    <!-- 그리드에서 col 은 행 가로 , row는 세로  -->
+    <style>
+        #container{display: grid; gap: 10px; 
+                    grid-template-columns: 200px 400px 200px;
+                    grid-template-rows: 200px 200px;}
+        #container>div{border: 1px solid black; background-color: coral;}
+    </style>
+</head>
+
+
+<body>
+    <div id = 'container'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- 그리드를 적용하고 갭으로 10을 줌..  -->
+<!-- 가로 (col)를 3열로 가정하고 숫자 3개를 줌  -->
+<!-- 높이(row)를 2로 가정하고 숫자 2개를 줌  -->

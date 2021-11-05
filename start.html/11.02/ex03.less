@@ -1,0 +1,20 @@
+// 3. 더 촘촘하게 한 가지 색을 가지고 그라데이션해보기(ex:녹색 6개->30개 등)
+// 	- div 태그 510개 (한 가지 색깔을 하더라도 검은색부터 원색까지)
+
+@color:#000000;
+@hue: hue(@color);
+@saturation:saturation(@color);
+@lightness:lightness(@color);
+div {height: 3px;}
+@iterations: 510; //반복횟수
+
+
+.rainbow-loop(@i) when (@i>510)
+{
+    div:nth-child(@{i})
+    {
+        background: hsl(@i @saturation @lightness;)
+    }
+    .rainbow-loop((@i)+1)
+}
+.rainbow-loop(@iterations);

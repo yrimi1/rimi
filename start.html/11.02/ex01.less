@@ -1,0 +1,29 @@
+@color:#FF0000;
+@hue: hue(@color);
+@saturation:saturation(@color);
+@lightness:lightness(@color);
+div {height: 10px;}
+@iterations:37; //반복횟수
+
+.rainbow-loop(@i) when (@i>0)
+{
+    div:nth-child(@{i})
+    {
+        background: hsl(@hue+((@i)*10),@saturation,@lightness)
+    }
+    .rainbow-loop((@i)-1)
+}
+.rainbow-loop(@iterations);
+
+
+// //반복횟수
+// div:nth-child(37){
+//     background: hsl(10,100%,50%);
+// }
+
+
+
+// div:nth-child(1){background: hsl(@hue, @saturation,@lightness);}
+// div:nth-child(2){background: hsl(@hue+10,@saturation,@lightness);}
+// div:nth-child(3){background: hsl(@hue+20,@saturation,@lightness);}
+// div:nth-child(4){background: hsl(@hue+30,@saturation,@lightness);}
