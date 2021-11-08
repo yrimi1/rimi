@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바 스크립트의 시작</title>
+
+    <script>
+        //ECMA script (이크마 스크립트)
+        //jp의 헬로월드
+        alert('안녕하세요')
+        alert("안녕하세요")
+        document.writeln("안녕")
+
+        //****예전 변수타입 (구글 네이버 지금도 이걸로 되있음)
+        var v = 100
+        v = '안녕'
+        v = 1.123
+        alert(v)
+        
+        var v ='논리적으로 오류가 발생할수있지만 중복선언을 허용함 '+'일단 동작은 함'
+        alert(v)
+        
+        //****요즘 변수타입 (변수타입이 하나, 중복 안됨)
+        let a = 2000
+        abc = 1234
+        // let a = 10//중복선언 안됨, 이렇게 쓰면 아예 실행이 안됨 
+        alert(abc)
+        
+        a = '자바 스트립트를 실행한다'
+        alert(a)
+
+        //상수(숫자를 한 번 정하면 바꿀일이 없을 경우엔 상수 사용) 
+        const rimAge = 33
+
+        // 매번 alert쓰기 싫을때 
+        console.log('Hey')
+        console.log(1+2)
+
+
+        document.writeln("<h1>안녕</h1>") 
+
+    </script>
+
+    <script src="01_startjs.js"></script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

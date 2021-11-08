@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("273"-10) //263 (따옴표 썼지만 숫자로 인식되어연산 됨)
+        console.log("273"+10) //27310 (더하기만 주의!! )
+        console.log("273"+"abc")//Nan
+
+        //그러니까 확실하게 숫자로 하고싶거든 넘버로 감싼다.
+        console.log(Number("273")-10)
+        console.log(Number("273")+10)
+
+        let input = prompt("입력해~~")
+        alert(typeof(input))
+        alert(input+100) //빼기하며 연상됨, 더하기는 문자열계산과 숫자계산이 다르므로 타입을 명확하게 해줘야 원하는 값이 나온다.
+        alert(Number(input)+100)
+</script>
+</head>
+<body>
+    
+</body>
+</html>

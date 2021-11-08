@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //#1번 문제 입력한 인치 센치로 변환
+    let ic = prompt ("인치를 입력하소")
+    console.log("입력한 inch값은"+(ic*2.54)+"cm입니다.")
+    
+    //#2번 문제1cm = 0.393701cm일 때, rawinput을 입력받아서 inch로 환산하시오.
+    let ri = prompt ("rewinput값을 입력하세요")
+    console.log("입력한값의 rewinput값은"+ri*0.393701+"inch입니다.")
+    
+    //#3번 문제원의 반지름을 입력받고 원의 넓이와 둘레를 구하시오
+    let semi = prompt ("반지름을 입력해 주세용")
+    const pi = 3.14
+    console.log("원의 둘레는"+((pi*2)*semi)+"입니다.")
+    console.log("원의 넓이는"+((pi*pi)*semi)+"입니다.")
+    
+    //#4번 문제1달러가 1207원일 때, 달러에 따른 원화를 출력하시오.
+    let wh = prompt("달러를 입력하세요")
+    console.log("입력하신 달러는"+wh*1207+"원 입니다.")
+    
+    //#5번#####다시공부합시다##### 문제 자신의 태어난 연도를 입력받고 
+    //그에 따른 10간지와 12지신띠를 출력하시오.
+    //띠를 구할때 1989 % 12 ->나머지가 9면 뱀(사),4면 쥐(자) 를 활용할것.
+        
+    // const myy = prompt("출생연도를 입력해 주세요")
+    // let myoutput=''
+    // const gan = myy%10
+    //if (gan == 9){myoutput +='기'}
+    //if (gan == 0){myoutput +='경'}
+    //if (gan == 1){myoutput +='신'}
+    //if (gan == 2){myoutput +='임'}
+    //if (gan == 3){myoutput +='계'}
+    //if (gan == 4){myoutput +='갑'}
+    //if (gan == 5){myoutput +='을'}
+    //if (gan == 6){myoutput +='병'}
+    //if (gan == 7){myoutput +='정'}
+    //if (gan == 8){myoutput +='무'}
+  
+    //const tti = myy%12
+    switch (tti) {
+        case 1:
+            myoutput +='사'
+            break;
+    
+        default:
+            break;
+    }
+  alert("myy년은"+myouput+"년 입니다.")
+
+
+///***배열의 인덱스값을 활용한 풀이
+const mygan = "경신입계갑을병정진사오미"
+const mytti = "신유술해자축인묘진사오미"
+alert(mygan[mygan%10]+mytti[myy%12])
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

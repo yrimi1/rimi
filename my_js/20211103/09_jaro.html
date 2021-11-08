@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형에 대한 정리</title>
+    <script>
+        console.log("2"==2)   // 참......>!?
+        console.log("2"+2) // 22가 나옴...
+        console.log("2"===2)  //거짓
+        console.log(2===2)    //참
+        // == : 안에 들어있는 값은 같은면 참.
+        // === : 타입이나 값 모두 같아야 참. js에만 있는 문법
+
+        // bool타입은 아니지만 거짓(flase)으로 간주하는 것들
+        console.log("flase인것들의 모음집")
+        console.log(Boolean(0))
+        console.log(Boolean(NaN)) //NaN : Not an Number
+        console.log(Boolean(''))
+        console.log(Boolean(NULL))
+        console.log(Boolean(undefined))//잘못된 연산을 할때 나옴
+        console.log(Boolean(false))
+        console.log("확인해보기")
+        //결과는 참 : 공백이 아닌 문자열이니까
+
+        console.log(Boolean('0'))
+        //결과는 NaN , string를 빼도 NaN
+        //단. string으로 감싸고 있기 떄문에 "NaN"인 상태이다.
+
+        console.log(String(Number('문자열')))
+        //결과는 참 : 공백이 아닌 문자열이라서
+
+        console.log(Boolean(String(Number('문자열'))))
+        // 결과는 거짓 : NaN자체는 flase로 변환 되니까...
+        console.log(Boolean((Number('문자열'))))
+        
+
+        // 문자열의 길이
+        let a = " 안녕 잘 지내니 워우워우예"
+        console.log(a.length)//길이가 찍힘
+        //문자열 각 글자별로 접근 가능
+        console.log(a[3])//4번째 글자 찍힘
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자축인묘</title>
+</head>
+<body>
+    <img src=img src="https://picsum.photos/id/1060/600/400" alt="">
+    <script>
+        let myImage = document.getElementById('myImg')
+        let myImage2 = document.querySelector('#myImg')
+        let input = prompt ('이미지 숫자')
+        if (input>100){
+            myImage.src ="https://picsum.photos/id/1060/600/400"
+        }
+        else{
+            myImage.src = "https://picsum.photos/id/${input}/600/400"
+        }
+    </script>
+</body>
+</html>
