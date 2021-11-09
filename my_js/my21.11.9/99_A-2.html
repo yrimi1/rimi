@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyAdd() 
+        {   // let one = document.getElementById("one").value
+            // let two = document.querySelector("#two").value
+
+            // let myinput = [one,two] //이렇게 하거나
+            // let myinput2 = []// 이렇게 하나씩 채워갈수있어요 
+            // myinput2[0]=one
+            // myinput2[1]=two
+
+            // alert(Number(one)+Number(two));
+            let one = document.getElementById("one").value
+            let two = document.querySelector("#two").value
+            let three = document.getElementById("three").value
+            let four = document.querySelector("#four").value
+            let five = document.querySelector("#five").value
+            alert(Number(one)+Number(two)+Number(three)+Number(four)+Number(five))
+           
+            
+        }
+        
+        function MyMul() 
+        {
+            let one = document.querySelector("input:nth-child(1)")
+            let two = document.querySelector("input:nth-of-child(2)")
+            let three = document.querySelector("input:nth-of-child(3)")
+            let four = document.querySelector("input:nth-of-child(4)")
+            let five = document.querySelector("input:nth-of-child(5)")
+
+            let myarr=[one,two,three]
+            let myinput2 = []
+            myinput2[0] = one
+            myinput2[1] = two
+            
+            let sum = 1
+            for (let i in myarr)
+                sum *= Number(myarr[i].value)
+            alert(sum)   
+            
+            
+            //all하면모든 자료 다당겨옴 그러므로 숫자가 아닌것은 반복문을 돌지않도록 
+            //isNaN함수를 써준다.
+            sum = 1
+            let myarr2 = document.querySelectorAll("input")
+            console.log(myarr2)
+            for (let j in myarr2){
+                if(isNaN(myarr[j].value))
+                break;
+                sum *= Number(myarr2[j].value)
+                alert(sum)
+            
+            }
+
+            //일반적인 for문으로 해결
+            sum = 1
+            for(let i=0; i<myarr2.length; i++)
+                sum *= Number(Array2[i].vlaue)
+                alert(sum)
+            
+            
+            //for of
+            sum = 1 
+            for(let item of myarr2)
+            {
+                sum*= Number(item.value)
+            }
+            alert(sum)
+        }
+      
+        
+    </script>
+    
+</head>
+<body>
+    <input type="text"id ="a">
+    <input type="text"id ="b">
+    <input type="text"id ="c">
+    <input type="text"id ="d">
+    <input type="text"id ="e">
+    <button onclick="MyAdd()">수의 합</button>
+    <!-- 합은 마은대로, 곱은 반복문 -->
+    <button onclick="MyMul()">수의 곱</button>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyAdd() 
+        {   // let one = document.getElementById("one").value
+            // let two = document.querySelector("#two").value
+
+            // let myinput = [one,two] //이렇게 하거나
+            // let myinput2 = []// 이렇게 하나씩 채워갈수있어요 
+            // myinput2[0]=one
+            // myinput2[1]=two
+
+            // alert(Number(one)+Number(two));
+            let a = document.getElementById("a").value
+            let b = document.getElementById("b").value
+            let c = document.getElementById("c").value
+            let d = document.getElementById("d").value
+            let e = document.getElementById("e").value
+            alert(Number(a)+Number(b)+Number(c)+Number(d)+Number(e))
+           
+            
+        }
+        
+        function MyMul() 
+        {
+            for(let i=0; i<10; i++)
+            document.writeln(i+"<br>")
+        }
+      
+        
+    </script>
+    
+</head>
+<body>
+    <input type="text"id ="a">
+    <input type="text"id ="b">
+    <input type="text"id ="c">
+    <input type="text"id ="d">
+    <input type="text"id ="e">
+    <button onclick="MyAdd()">수의 합</button>
+    <!-- 합은 마은대로, 곱은 반복문 -->
+    <button onclick="MyMul()">수의 곱</button>
+
+
+</body>
+</html>

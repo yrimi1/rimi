@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myAdd() 
+        {//
+
+            let one = document.getElementById("one").value
+            let two = document.querySelector("#two").value
+
+            let myinput = [one,two] //이렇게 하거나
+            let myinput2 = []// 이렇게 하나씩 채워갈수있어요 
+            myinput2[0]=one
+            myinput2[1]=two
+
+            alert(Number(one)+Number(two));
+        }
+      
+        
+    </script>
+    
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <button onclick="myAdd()">무언가를 씁시다</button>
+
+
+</body>
+</html>
