@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- + - / * -->
+    <input type="text" id="one">
+    <label id="my_operator"></label>
+    <input type="text" id="two">
+    =
+    <label id="my_result"> 결과 </label>
+    <button id="plus_result" onclick="plus()">더하기</button>
+    <button id="mul_result" onclick="mul()" >곱하기</button>
+
+    <script>
+        function my_calculator(op)//op에따른 다른연산
+        {
+            let one = Number(document.getElementById('one').value)
+            let two = Number(document.querySelector('#two').value)
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+            myop.innerText
+
+            switch(op){
+                case '+':
+                    myresult.innerText = (one+two)
+                    break
+                case '-':
+                    myresult.innerText = (one-two)
+                    break    
+
+                case '*':
+                    myresult.innerText = (one*two)
+                    break
+                    
+                case '/':
+                    myresult.innerText = (one/two)
+                    break
+                
+                default:
+                    break
+
+            }
+        }
+
+        
+    </script>
+
+
+
+    <script>
+        let minus_result = document.querySelector('#minus_result')
+        minus_result.onclick = function(){
+
+
+        }
+
+        let dv_result = document.querySelector("#")
+    </script>
+    
+</body>
+</html>

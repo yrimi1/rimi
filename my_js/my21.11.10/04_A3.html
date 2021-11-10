@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <p>몇월에 태어 나셨나요</p>
+    <input type="text"><button>계절사진보기</button>
+    <script>
+        //인위적으로 태그 추가1
+        let a = document.createElement('h1')
+        let mytext = document.createTextNode("계절<br>사진은?")
+        a.appendChild(mytext)
+        document.body.appendChild(a) //이 부분이 핵심!
+        //태그 추가2
+        let a2 = document.createElement('h1')
+        a2.innerHTML = "결과가"+"<br>"+"궁금합니다."
+        document.body.appendChild(a2)
+        //innerHTML과 Text의 차이!
+        let a3 = document.createElement('h1')
+        a3.innerText = "이제"+"<br>"+"이미지보여줘."
+        document.body.appendChild(a3)
+
+
+        //봄 : https://cdn.pixabay.com/photo/2017/04/11/21/27/spring-flowers-2222879__340.jpg
+        //여름: https://cdn.pixabay.com/photo/2016/11/14/22/18/beach-1824855__340.jpg
+        //가을: https://cdn.pixabay.com/photo/2018/01/18/10/39/fall-3089995__340.jpg
+        //겨울: https://cdn.pixabay.com/photo/2013/10/27/17/14/snowfall-201496__340.jpg
+    
+        let myphoto = document.createElement('img')
+
+        let mybtn = document.querySelector('button')
+        mybtn.oneclick = function()
+        {
+            let mymonth =  document.querySelector('input')
+            mymonth = Number(mymonth.value)
+            switch (mymonth) {
+                case 3:
+                case 4:
+                case 5:
+                    myphoto.src = 'https://cdn.pixabay.com/photo/2017/04/11/21/27/spring-flowers-2222879__340.jpg' //봄이미지
+                    break; //브레이크를만나야 스위치문을 빠져나간다. 브레이키가 없다면 아래 이미지까지 계속나옴.
+                
+                case 6:
+                case 7:
+                case 8:
+                    myphoto.src = 'https://cdn.pixabay.com/photo/2016/11/14/22/18/beach-1824855__340.jpg'  //여름 이미지
+                    break;
+            
+                case 9:
+                case 10:
+                case 11:
+                    myphoto.src = 'https://cdn.pixabay.com/photo/2018/01/18/10/39/fall-3089995__340.jpg'  //가을 이미지
+                    break;
+                
+                case 12:
+                case 1:
+                case 2:
+                    myphoto.src = 'https://cdn.pixabay.com/photo/2013/10/27/17/14/snowfall-201496__340.jpg'//겨울이미지  
+                    break;
+                
+                default:
+                    break;
+            }
+            document.body.appendChild(myphoto)
+
+
+            // //배열에있는것으로 당겨오기 
+            // let myseason=[]
+            // let myseason[0]=""
+            // let myseason[1]=""
+            // let myseason[2]=""
+            // let myseason[3]=""
+             
+            
+            //스위치문없이 코드 축약 해보기  (2차원배열)
+            let mymonth =  [[3,4,5],[6,7,8],[9,10,11],[12,1,2]]// 배열안에 배열넣기
+            let mytest = document.createElement('img')
+            let index = -1
+            for (let i = 0; i<4;i++)
+            {
+                for(let j =0; j<3;j++){
+                    let find = mymonth[i].indexOf(mymonth)
+                    if(find != -1)
+                    console.log(i+"입니다.")
+                }
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>

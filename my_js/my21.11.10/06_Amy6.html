@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 입력 데이터 2개 -->
+    <!-- 컴퓨터도 마찬가지로 2개의 입력폼 -->
+    <!-- 포켓몬 선택(물 불 풀) -->
+    <!-- 버튼 8개 (1~8) -->
+    <!-- 2세대 포켓몬이면서 풀타입인 경우에는 상대가 -->
+    <!-- 상대가 물타입이어도 무조건 진다. -->
+    <!-- 즉 2세대 풀타입은 같은 2세대 풀타입 만날때만 비김 -->
+    <button class="pcmonst">불</button>
+    <button class="pcmonst">물</button>
+    <button class="pcmonst">풀</button>
+    <br>
+    <button class="ganer">1세대</button>
+    <button class="ganer">2세대</button>
+    <button class="ganer">3세대</button>
+    <button class="ganer">4세대</button>
+    <button class="ganer">5세대</button>
+    <button class="ganer">6세대</button>
+    <button class="ganer">7세대</button>
+    <button class="ganer">8세대</button>
+   
+
+    <span>나의 결과</span>
+    <img>
+    <span>컴퓨터의 결과</span>
+    <img>
+    <h1>최종 결과</h1>
+    <button>배틀시작</button>
+
+    <script>
+       
+        let myresultimg = document.querySelectorAll('img')[0]
+        let pcresultimg = document.querySelectorAll('img')[1]
+        let gbb = [ "https://cdn.pixabay.com/photo/2013/12/17/20/10/bubbles-230014__340.jpg",
+                    "https://cdn.pixabay.com/photo/2013/06/09/17/04/fire-123784__340.jpg",
+                    "https://cdn.pixabay.com/photo/2016/07/10/09/40/dew-1507498__340.jpg"]
+        
+        
+        function fnc_result(mychoice)
+        {
+            
+            let pc_choice = Math.floor(Math.random()*3)
+            pcresultimg.src = gbb[pc_choice]
+            
+
+            // 택스트컨텐츠를 알때 이렇게 짜면 됩니다.!!!!!!!!!!!!!!
+            switch (mychoice.target.textContent) {
+                case "불":
+                    myresultimg.src = gbb[0]
+                        switch (pc_choice) {
+                            case 0:
+                                alert('비김')
+                                break;
+                        
+                            case 1:
+                                alert('짐')
+                                break;
+                            
+                            case 3:
+                                alert('이김')
+                                break;    
+                                
+                            default:
+                                break;
+                        }
+                  break;
+            
+                  case "물":
+                   
+                    myresultimg.src = gbb[1]
+                    switch (pc_choice) {//switch의 중첩
+                            case 0:
+                                alert('비김')
+                                break;
+                        
+                            case 1:
+                                alert('짐')
+                                break;
+                            
+                            case 3:
+                                alert('이김')
+                                break;    
+                                
+                            default:
+                                break;
+                        }
+                    break;
+                case "풀":
+               
+                    myresultimg.src = gbb[2]
+                    switch (pc_choice) {//switch의 중첩
+                            case 0:
+                                alert('비김')
+                                break;
+                        
+                            case 1:
+                                alert('짐')
+                                break;
+                            
+                            case 3:
+                                alert('이김')
+                                break;    
+                                
+                            default:
+                                break;
+                        }
+                    break;
+            
+                default:ㄴ
+                    break;
+            }
+        }
+        let mybuttons = document.querySelectorAll('button')
+        for(let item of mybuttons)
+            item.onclick = fnc_result;
+    </script>
+</body>
+</html>

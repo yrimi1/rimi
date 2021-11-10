@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="p" id="">불</button>
+    <button class="p" id="">물</button>
+    <button class="p" id="">풀</button>
+
+    <br>
+    <!-- button.g#$*{$세대}*8 -->
+    <button class="g" id="1">1세대</button>
+    <button class="g" id="2">2세대</button>
+    <button class="g" id="3">3세대</button>
+    <button class="g" id="4">4세대</button>
+    <button class="g" id="5">5세대</button>
+    <button class="g" id="6">6세대</button>
+    <button class="g" id="7">7세대</button>
+    <button class="g" id="8">8세대</button>
+    <br>
+    <button id="p_battle">배틀시작</button>
+
+    <h1>결과는?</h1>
+    <h1 id="my_battle_result"></h1>
+    <h1>나의 포켓몬</h1>
+    <img id="me">
+    <h1>너의 포켓몬</h1>
+    <img id="pc">
+   
+    <script>
+        let my_type = "-"
+        let my_gen = "-"
+
+        const FIRE =0
+        const WATER=1
+        const LEAP=2
+
+        let type =[]
+
+        type[FIRE] ="https://cdn.pixabay.com/photo/2013/06/09/17/04/fire-123784__340.jpg"
+        type[WATER]="https://cdn.pixabay.com/photo/2013/12/17/20/10/bubbles-230014__340.jpg"
+        type[LEAP]="https://cdn.pixabay.com/photo/2016/07/10/09/40/dew-1507498__340.jpg"
+        type[3]= "https://search.naver.com/search.naver?where=image&sm=tab_niv&query=%EC%B9%98%EC%BD%94%EB%A6%AC%ED%83%80&nso=so%3Ar%2Ca%3Aall%2Cp%3Aall#imgId=image_sas%3Ablog148207909%7C8%7C222294881596_210722048&vType=rollout"
+   
+   function choiceType(choice_type) 
+   {
+       my_type =  choice_type.target.id;
+    //    alert(my_type)
+   }
+   
+   function choiceGen(params) {
+       mt_gen=choice_gen.target.id
+    //    alert(my_gen)
+   }
+
+   function battle() 
+   {
+       if(my_gen =="-"|| my_type == "-")
+       {
+           alert("세대타입 선택하세요")
+           return
+       }
+       let me = document.querySelectorAll("#me")
+       let pc = document.querySelectorAll("#pc")
+
+       let pc_type = Math.floor(Math.random()*3)
+       let pc_gen = Math.floor(Math.random()*8)+1
+
+       let my_battle_result = document.querySelector("#my_battle_result")
+
+
+       if(pc_gen ==2 && pc_type==LEAP)
+            pc.src = type[3]
+       else
+       pc.src = type[pc_type]
+
+
+       switch (my_type) {
+           case 'fire':
+               me.src = type[FIRE]
+               switch (pc_type) {
+                   case FIRE:
+                       my_battle_result.innerText = '무승부'
+                       break;
+                    case WATER:
+                        my_battle_result.innerText = '패배'
+                       break;
+
+                    case LEAP:
+                        my_battle_result.innerText = '승리'
+                       break;
+
+                   default:
+                       break;
+               }
+               break;
+            
+            case 'water':
+               me.src = type[WATER]
+               switch (pc_type) {
+                   case FIRE:
+                       my_battle_result.innerText = '승리'
+                       break;
+                    case WATER:
+                        my_battle_result.innerText = '무승부'
+                       break;
+
+                    case LEAP:
+                        my_battle_result.innerText = '패배'
+                       break;
+
+                   default:
+                       break;
+               }
+               break;
+                 
+               
+            case 'leap':
+                if(my_gen ==2)
+                   me.src = type[3] 
+                else
+                    me.src = type[LEAP]
+
+               me.src = type[LEAP]
+               break;   
+
+       
+           default:
+               break;
+       }
+
+       me.src = type[my_gen]
+       pc.src = type[pc_gen]
+   }
+
+   let p_types = document.querySelectorAll(".p")
+   for(let item of p_types)
+   item.onclick = choiceType
+   let p_types = document.querySelectorAll(".g")
+   for(let item of p_types)
+   item.onclick = choiceGen
+
+   let p_battle= document.querySelector("p_battle")
+   p.battle
+
+
+   
+   </script>
+
+</body>
+</html>
