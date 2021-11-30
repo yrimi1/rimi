@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트를 주렁주렁</title>
+    <style>
+        h1 {user-select: none;} /* 클릭 여러번할때 글자선택 방지 */
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+
+    <script>
+        let counter = 0
+        let flay = true
+        const myh1 = document.querySelector('h1')
+        setInterval(
+            function () 
+            {
+                if (flag)
+                {
+                    counter --
+                }
+                else
+                    counter++
+                
+                if(counter>255)
+                    flag == true
+                else
+                    flag == false 
+                    
+                    
+                myh1.style.color = `rgb(${counter*10},0,0)`
+            },100)
+        
+    </script>
+
+</body>
+
+</html>

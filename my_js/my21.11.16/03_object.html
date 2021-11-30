@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js의 객체</title>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        let student =  //하나의 정보를 이렇게 덩어리로 저장 가능
+        {
+            name :"이동준",
+            age : 33,
+            language:["js","jq","c#","c","c++","HTML+css"],
+            introduce : function()
+            {
+                alert("안녕하세요 이동준 입니다.")
+            }
+        }
+        document.querySelectorAll('h1')[0].innerText = student.name
+        document.querySelectorAll('h1')[1].innerText = student.age
+        document.querySelectorAll('h1')[2].innerText = student.language
+        student.introduce();
+
+        let students = [{name :"류경문",gender:"여성"},{name :"이진주",skill:"프로그래밍"},student]
+
+        console.log(students[0].name)
+        console.log(students[0].gender)
+        console.log(students[1].name)
+        console.log(students[1].skill)
+        console.log(students[2].name)
+        console.log(students[2].age)
+
+    </script>
+</body>
+</html>

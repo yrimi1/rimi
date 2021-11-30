@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        // let myh1 = document.createElement('h1')//h1만들기
+        // myh1.innerText="자바스크립트로 태그추가"
+        // document.body.appendChild(myh1) //바디테그에 삽입
+        function nextRandomInteger(limit) {
+            return Math.round(Math.random()*limit)
+        }
+        let randomAlphabet = function () 
+        {
+            let alphabet = 'abcdefghijklnmopqrstuvwxyz'
+            return function(){
+                return alphabet.charAt(nextRandomInteger(25))
+            }    
+        }
+        function randomSpeed(MaxSpeed) {
+            return Math.random()*MaxSpeed - Math.random()*
+            
+        }
+
+   </script> 
+
+   <script>
+       let canvasWidth = "400"
+       let canvasHeight = "300"
+    function MovingText() 
+    {
+    this.x = nextRandomInteger(canvasWidth)
+    this.y = nextRandomInteger(canvasWidth)
+    this.body = document.createElement('h1')
+    
+    this.body.style.position = 'fixed'
+    this.move = function(){
+        if (this.x<0 || this.x > canvasWidth)
+            this.vx*= -1
+        if(this.x<0 || this.x > canvasHeight)
+            this.vx*= -1
+        
+    }
+}
+   </script>
+
+
+<script>
+    window.onload = function(){
+        let MovingText = []
+        for(let i =0;i<100;i++){
+            MovingText.push(new MovingText())
+        }
+    
+    }
+    
+</script>
+</body>
+</html>

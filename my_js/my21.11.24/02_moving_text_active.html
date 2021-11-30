@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovingText에 문제 풀어보기(선생님판)</title>
+    <script>
+        //임의의 정수값을 뽑는 함수 호출
+        function nextRandomInteger(limit){
+            //round = 반올림
+            return Math.round(Math.random()*limit)  // random값 뽑아서 round로 반올림
+        }
+        let randomAlphabet = (
+            function()
+            {
+                const alphabet1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'//문자열로 입력받은것을
+                const alphabet2 = '가나다라마바사아자차카타파하'//문자열로 입력받은것을
+                const alphabet3 = 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت'//문자열로 입력받은것을
+                const lang = [alphabet1,alphabet2,alphabet3]
+                return function(){
+                    //lang[0], lang[1], lang[2]
+                    const myalpha = lang[nextRandomInteger(2)]
+                    return myalpha.charAt(nextRandomInteger(myalpha.length-1))//그중 한글자를 char타입으로 변환해서
+                }
+            }
+        )() //함수를 선언하자마자 호출한 것
+
+        function randomSpeed(maxSpeed){
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+    </script>
+    <script>
+        let canvasWidth = 700 //최대넓이
+        let canvasHeight = 400 //최대높이
+        function MovingText(param)
+        {
+            this.x  = nextRandomInteger(canvasWidth) 
+            this.y  = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b  = document.createElement('h1')
+
+            console.log(param)
+            //undefined은 false랑 동일하게취급
+            //0,null,NaN,'',undefined같은 건 전부
+            //false로 취급
+            if(!param)//param이 없는 경우
+                this.b.innerText = randomAlphabet()
+            else
+                this.b.innerText = param
+            
+            this.b.style.position = 'fixed'
+            //this.b.style.color=`rgb(${nextRandomInteger(255)},${nextRandomInteger(255)},${nextRandomInteger(255)})`
+            //appendChild 해줘야 body에 실제로 들어감
+            document.body.appendChild(this.b)
+            this.move = function() {
+                if(this.x<0 || this.x>canvasWidth)
+                    this.vx *= -1
+                if(this.y<0 || this.y>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                //좌표위치조정
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            let adder = document.querySelector('button')
+            let input = document.querySelector('input')
+            adder.onclick =  () =>{
+                movingTexts.push(new MovingText(input.value))
+            }
+
+            let movingTexts = []
+            //let mycolors = ['red','green','blue']
+            //let backcolor =['pink', 'yellow']
+            for(let i = 0; i<100; i++){
+                movingTexts.push(new MovingText())
+            }
+            setInterval(function()
+            {
+                for(let i in movingTexts)
+                {
+                    movingTexts[i].move()
+                    movingTexts[i].b.style.color=
+                    `rgb(${nextRandomInteger(255)},
+                         ${nextRandomInteger(255)},
+                         ${nextRandomInteger(255)})`
+
+                    document.body.style.backgroundColor=
+                    `rgb(${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)})`
+
+                    //movingTexts[i].b.style.color=mycolors[nextRandomInteger(2)]
+                    //document.body.style.backgroundColor=backcolor[nextRandomInteger(1)]
+
+                }
+            }, 1000/30) //33.3333 ms에 한 번
+        }               //0.03초에 한 번
+    </script>
+    <style>
+        button,input
+        {
+            left:0px; 
+            top:500px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button>글자 추가</button>
+    <input type="text" name="" id="">
+</body>
+</html>

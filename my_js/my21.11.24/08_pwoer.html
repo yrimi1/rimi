@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제곱</title>
+</head>
+<body>
+    <script>
+        Number.prototupe.power = function(n=2)
+        {
+            return this.valueOF()** n
+        }
+    </script>
+    <script>
+        let a = 5
+        a = a**2
+        let myh1 = document.createElement('h1')
+        myh1.innerText = a
+        document.body.appendChild(myh1)
+        a = 10
+        let myh1_2 = document.createElement('h1')
+        myh1_2.style.color = 'red'
+        myh1_2.innerText = a.power(3)// a의 3제곱
+        document.body.appendChild(myh1_2)
+
+    </script>
+</body>
+</html>

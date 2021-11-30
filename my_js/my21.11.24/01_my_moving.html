@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MovingText에 문제 풀어보기</title>
+   
+
+    <script>
+        function nextRandomInteger(limit) {
+            return Math.round(Math.random() * limit)  // random값 뽑아서 round로 반올림
+        }
+        
+        let randomAlphabet = (//함수안에 함수
+            function () 
+            {
+                let alphabet1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' //문자열로 입력받은것을
+                let alphabet2 = '가나다라마바사아자차카타파하' //문자열로 입력받은것을
+                let alphabet3 = '123456789' //문자열로 입력받은것을
+                const lang = [alphabet1,alphabet2,alphabet3]
+                return function () {
+                    return alphabet.charAt(nextRandomInteger(25))//그중 한글자를 char타입으로 변환해서
+                }
+            }
+        )()//함수를 선언하자마자 호출한것.
+        
+        function randomSpeed(maxSpeed){
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }                             
+
+    </script>
+    
+    
+    <script>
+        let canvasWidth = 700 // 최대넓이
+        let canvasHeight = 400 //최대높이
+        //객체 만드는 것
+        function MovingText()
+        {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'absolute'
+            document.body.appendChild(this.b)//appendChild 바디에 삽입하기위한 핵심 
+            this.move = function() //0.3초 한 번 호출
+            {
+                if(this.x<0 || this.x>canvasWidth)
+                    this.vx *= -1
+                if(this.y<0 || this.y>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                //좌표 위치 조절
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+
+    <script>
+    window.onload = function()
+    {
+        let movingTexts = []
+        for(let i =0; i<100; i++){
+            movingTexts.push(new MovingText())
+        }
+        setInterval(function()//setInterval 특정시간마다 괄호안을 반복한다.
+        {
+            for(let i in movingTexts)
+                movingTexts[i].move()
+        }, 1000/30) // 0.03초에 한번 for문을 돌아간다.
+    }
+</script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

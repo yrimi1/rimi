@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function MyAnimal(c, na, m, n, a)
+        // {
+        //     this.category = c
+        //     this.name = na
+        //     this.master = m
+        //     this.num = n
+        //     this.age = a
+        //     this.regist = function()
+        //     {
+        //         alert(`${n}번 동물은 등록되었습니다.`
+        //          + `(${c}, ${na}, ${m}, ${a})`)
+        //     }
+        // }
+
+        let myanimals = []
+        for(let i = 0; i<3; i++)
+        {
+            let category = prompt("동물의 종류는?")
+            let name = prompt("이름은?")
+            let master = prompt("주인이름은?")
+            let num = prompt("고유번호는?")
+            let age = prompt("동물 나이는?")
+            myanimals[i] 
+                = new MyAnimal(category,name,master,num,age)
+            //myanimals.push(new MyAnimal(category,name,master,num,age))
+            myanimals[i].regist()
+        }
+        console.log(myanimals)
+
+
+
+        let myanimals = []
+        for(let i = 0; i<3; i++)
+        {
+            let category = prompt("동물의 종류는?")
+            let name = prompt("이름은?")
+            let master = prompt("주인이름은?")
+            let num = prompt("고유번호는?")
+            let age = prompt("동물 나이는?")
+            if(i<0){
+                if (myanimals.indexOf(num) != -1) 
+                {
+                    i--
+                    continue
+                }
+            myanimals[i] = new MyAnimal(category,name,master,num,age)}
+            //myanimals.push(new MyAnimal(category,name,master,num,age))
+            myanimals[i].regist()
+        }
+        console.log(myanimals)
+
+        
+        consolelog.onclick = function()
+    {
+        console.log(students)
+    }
+        // let animal1 = new MyAnimal("개", "멍멍이", "장상은", "1", "2")
+        // let animal2 = new MyAnimal("고양이", "야옹이", "김아무개", "2", "5")
+        // let animal3 = new MyAnimal("이구아니", "이구", "홍길동", "3", "4")
+    </script>
+</head>
+
+<body>
+  
+</body>
+
+</html>

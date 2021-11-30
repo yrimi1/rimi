@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        class MyAnimal
+        {
+            constructor(c,n,mst,nm,a)
+            {
+                this.category = c
+                this.name = n
+                this.master = mst
+                this.num = nm
+                this.age = a
+                this.regist = function()
+                {
+                    alert(`${nm}번 동물 등록`+
+                    `${c},${n},${mst},${a}`)
+                }
+            }
+        }
+
+        //let test = document.getElementById('#ctg').value
+        //alert(test)
+        //window.onload : 창을 다 불러온 뒤에 동작하는 코드
+        window.onload = function()
+        {
+            let my_ctg = document.getElementById('ctg')
+            let my_name = document.getElementById('name')
+            let my_master = document.getElementById("master")
+            let my_number = document.getElementById('number')
+            let my_age = document.getElementById('age')
+
+            let btn_create = document.getElementById('create')
+            let btn_select_num = document.getElementById('select_num')
+            let btn_select_name = document.getElementById('select_name')
+            let btn_select_ctg = document.getElementById('select_ctg')
+
+            let animals = []
+
+            btn_create.onclick = function()
+            {
+                for(let item of animals)
+                {
+                    if(item.num == my_number.value)
+                    {
+                        alert("중복된 번호!")
+                        return
+                    }
+                }
+                animals.push(new MyAnimal(my_ctg.value, my_name.value, 
+                    my_master.value, my_number.value, my_age.value))
+                console.log(animals)
+                animals[animals.length-1].regist();
+            }
+
+            btn_select_num.onclick = function()
+            {
+                for(let item of animals)
+                {
+                    if(item.num == my_number.value)
+                    {
+                        alert(`${my_number.value}번 동물`+
+                        `이름: ${item.name} 종류:${item.category}`)
+                        return
+                    }
+                }
+            }
+            btn_select_name.onclick=function()
+            {               
+                for(let item of animals)
+                {
+                    if(item.name == my_name.value)
+                    {
+                        console.log(`${item.num}번 동물`+
+                        `이름: ${item.name} 종류:${item.category}`)
+                    }
+                }
+            }
+
+            btn_select_ctg.onclick = function()
+            {
+                let temp = []
+                for(let item of animals)
+                {
+                    if(item.category == my_ctg.value)
+                    {
+                        //temp.push(item)
+                        temp.push(new MyAnimal(item.category, item.name, 
+                                       item.master, item.num, item.age))
+                    }
+                }
+                //temp[0].master = "한지우"
+                console.log(temp)
+                console.log(animals)
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 태그안에서 space는 2칸 이상 안 됨 -->
+    <!-- &nbsp;  space 바  -->
+    종류 &nbsp; : <input type="text" id="ctg"> <br>
+    이름 &nbsp;&nbsp;: <input type="text" id="name"><br>
+    주인명: <input type="text" id="master"><br>
+    번호 &nbsp;&nbsp;: <input type="text" id="number"><br>
+    나이 &nbsp;&nbsp;: <input type="text" id="age"><br>
+    <button id="create">등록</button>
+    <button id="select_num">번호로 조회</button>
+    <button id="select_name">동물이름으로 조회</button>
+    <button id="select_ctg">동물종류로 조회</button>
+
+
+</body>
+</html>

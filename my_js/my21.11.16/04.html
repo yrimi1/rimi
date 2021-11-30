@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="04_myj.json"></script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        let h1list = document.querySelectorAll('h1')
+        let mydata = JSON.parse(JSON.stringify(data))
+        console.log(mydata)
+        h1list[0].innerText = `${mydata.drwNo}회차`
+        h1list[1].innerText = `1번:${mydata.drwtNo1}`
+        h1list[2].innerText = `2번:${mydata.drwtNo2}`
+        h1list[3].innerText = `3번:${mydata.drwtNo3}`
+        h1list[4].innerText = `4번:${mydata.drwtNo4}`
+        h1list[5].innerText = `5번:${mydata.drwtNo5}`
+        h1list[6].innerText = `6번:${mydata.drwtNo6}`
+        h1list[7].innerText = `보너스:${mydata.bnusNo}`
+    </script>
+</body>
+</html>

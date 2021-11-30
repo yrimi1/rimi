@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let product = {
+            name : '망고',
+            type : 'fruit',
+            taste : '맛남',
+            '-' : '마이너스',
+            '+' : '특수문자는 키 안됨',
+            '@' :'골뱅이 이런거 안됨.. 따옴표로 감싸면 가능'
+        }
+
+        alert(product.name)
+        alert(product['name'])
+        alert(product['taste'])
+        alert(product['@'])
+
+
+        //새로운 속성을 추가하고싶어요 
+        product.owner = '이승훈'
+        console.log(product)
+        console.log(JSON.stringify(product,null,2)) //마지막숫자는 들여쓰기
+
+        let 들여쓰기 = 5
+        console.log(JSON.stringify(product,null,들여쓰기))
+
+        //지우고싶음
+        delete product['@']
+        console.log(product)
+        console.log(JSON.stringify(product,null,2))
+
+        alert(typeof product)
+        let a = []
+        alert (typeof a)
+        alert (Arrat.inArrat(a))
+        let b = function name() {}
+        slert(typeof b)
+        //a(b)c(d)ef(g)hijklmnop q(r)stu(v)wx(y)z
+    </script>
+
+</body>
+</html>

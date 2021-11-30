@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>lotto뽑기</title>
+    <style>
+        h1 {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 25px,25px,25px,25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <br>
+    <button>로또 색깔 입히기</button>
+    <button id="random_color">로또랜덤색깔</button>
+
+    <script>
+        let lotto = []
+        for (let i = 0; i < 7; i++) 
+        {
+            let num = Math.floor(Math.random() * 45) + 1 // 0이상 1미만 // 0부터 44 //그러므로 1추가함
+            if (i > 0) //중복검사
+            {   
+                //indexOf함수 
+                
+				// 배열안에 특정한 값의 위치가 어딧는지 모를때 값을 검색
+                // 값이없으면 위치되는 인덱스를 토해냄. 값이 없으면 -1반환 
+                if (lotto.indexOf(num) != -1) 
+                {
+                    i--
+                    continue
+                }
+            }
+            lotto[i] = Number(num)
+        }
+
+        // let h1list = document.querySelectorAll('h1')
+        let h1list = document.getElementsByTagName('h1')
+        let i = 0
+        for(let item of h1list)
+        {
+            item.innerText = lotto[i]
+            i++
+        }
+    </script>
+  
+  
+    <script>
+        let mybutton = document.querySelector('button')
+        mybutton.onclick = function()
+        {
+            // let temph1list = document.querySelectorAll('h1')
+            for(let item of h1list)
+            {
+                item.style.backgroundColor='springgreen'
+            }
+        }
+        let random_button = document.querySelector('#random_color')
+        let mycolor = ['yellow','blue','red','gray','green']
+        
+        random_button.onclick = function()
+        {
+            for(let item of h1list)
+            {
+                let mc = Math.floor(Math.random()*mycolor.length)
+                item.style.backgroundColor = mycolor[mc]
+            }
+        }
+    </script>
+
+</body>
+
+</html>
