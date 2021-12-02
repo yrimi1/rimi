@@ -6,3 +6,6 @@ https://wikidocs.net/35482
 
 3.QPixmap
 https://wikidocs.net/33768
+
+4. 데이터분석 및 이미지처리
+https://github.com/ndb796/Python-Data-Analysis-and-Image-Processing-Tutorial
