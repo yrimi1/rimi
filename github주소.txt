@@ -9,3 +9,6 @@ https://wikidocs.net/33768
 
 4. 데이터분석 및 이미지처리
 https://github.com/ndb796/Python-Data-Analysis-and-Image-Processing-Tutorial
+
+5.카카오 플러스친구
+https://blog.naver.com/chandong83/221240062771
