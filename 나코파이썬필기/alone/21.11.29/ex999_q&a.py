@@ -8,7 +8,6 @@
 from random import *
 
 mylist = range(1,21)
-
 mylist = list(mylist)
 print(mylist)
 
