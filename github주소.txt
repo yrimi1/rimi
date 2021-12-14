@@ -12,3 +12,6 @@ https://github.com/ndb796/Python-Data-Analysis-and-Image-Processing-Tutorial
 
 5.카카오 플러스친구
 https://blog.naver.com/chandong83/221240062771
+
+6.혼자공부하는 머신러닝 깃허브
+https://github.com/rickiepark/hg-mldl
