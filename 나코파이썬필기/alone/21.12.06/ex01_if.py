@@ -17,4 +17,3 @@ elif 10 <= temp and temp < 30:
     print("적정온도")
 elif 0 > temp:
     print("추브요")
-ㅌ
